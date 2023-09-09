@@ -5,11 +5,11 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import {Note} from "../../services/Note";
+import {Nota} from "../../services/Nota";
 
 
 type PostItNota = {
-  nota?:Note,
+  nota?:Nota,
   index?:Number,
   alertA?:(index: number) => void
 }
@@ -23,10 +23,10 @@ const PostIt:FC<PostItNota> = ({nota,index, alertA}) => {
           {nota?.title +' '+nota?.content}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {nota?.author}
+          {nota?.author?.name+' '+nota?.author?.surname}
         </Typography>
         <Typography variant="body2">
-          {nota?.data_create?.toDateString()}
+          {nota?.date_created?.toDateString()}
         </Typography>
       </CardContent>
       <CardActions>
