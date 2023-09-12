@@ -26,7 +26,6 @@ const notes = axios.create({
       .get('/')
       .then((result ) => {
         risposta = result.data
-        noteAll
       })
       .catch((error) => {
         console.log(error.message)
